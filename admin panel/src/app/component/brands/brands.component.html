@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<div>
+					<h2>Brands <button class="btn-sm" (click)="openModal()" style="float:right; "> + Add New Brand</button> </h2>	
+				</div>	
+			</div>
+			<div class="card-body text-center">
+				<table class="table" border="1">
+					<tr>
+					  <th>Brand ID</th>
+					  <th>Brand Name</th>
+					  <th> Images</th>
+					  <!-- <th>Logo Description</th> -->
+					  <!-- <th>Brand Images</th>
+					  <th>Description</th> -->
+					  <th colspan="2">Actions</th>	
+					</tr>
+					<tr *ngFor="let brand of Brands">
+						<td>{{brand.brand_id}}</td>
+						<td>{{brand.brand_name}}</td>
+						<td>{{brand.images}} </td>
+						<!-- <td>{{brand.logo_desc}}</td> -->
+						<!-- <td>{{brand.brand_image}}</td>
+						<td>{{brand.description}}</td> -->
+						<td ><button (click)="openModal(brand)" class="btn btn-info btn-sm" style="cursor: pointer;">Edit</button>
+						<button (click)="delete(brand.brand_id)" class="btn btn-danger btn-sm" style="cursor: pointer;">Delete</button></td>
+					</tr>
+				</table>
+			</div>			
+		</div>
+	</div>
+</div>
+

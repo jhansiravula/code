@@ -1,0 +1,99 @@
+<nav class="mmenu">
+  <label for="drop" class="toggle"><i class="fa fa-bars"></i></label>
+  <input type="checkbox" id="drop" />
+  <ul class="menu">
+    <li><a href="home.html">Home</a></li>
+    <li><a routerLink="/about">About Us</a></li>
+    <li>
+      <!-- First Tier Drop Down -->
+      <label for="drop-1" class="toggle">Products +</label>
+      <ul>
+        <li routerLink="products" *ngFor="let brand of brands"><a (click)="clickBrand(brand.brand_name, brand.brand_id)" >{{brand.brand_name}}</a></li>
+      </ul>
+    </li>
+    <li>
+      <label for="drop-2" class="toggle">Resources +</label>
+      <ul>
+        <li><a routerLink="gallery">Knowledge base</a></li>
+        <li><a routerLink="gallery">Events</a></li>
+        <li><a routerLink="gallery">Picture Gallery</a></li>
+        <li><a routerLink="gallery">Images & Videos</a></li>
+        <li><a routerLink="gallery">Blog</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="careers">Careers</a></li>
+    <li><a routerLink="contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- start header -->
+  <header>
+    <div class="top hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 pull-right">
+            <p class="topcontacty" style="text-align:right;">Call us at <a href="mailto:info@blueocean-technologies.com">info@blueocean-technologies.com</a></p>
+          </div>
+          <!-- <div class="col-sm-6">
+    <ul class="social-network">
+              <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook"></i></a></li>
+              <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter"></i></a></li>
+              <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin"></i></a></li>
+            </ul>
+    </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="container container-fluid2">
+
+      <p class="topcontacty" style="text-align:right;">Mail us at: <a href="mailto:info@blueocean-technologies.com">info@blueocean-technologies.com</a></p>
+      <div class="row nomargin">
+        <div class="col-sm-3">
+          <div class="logo">
+            <a href="index.html"><img src="assets/img/BlueOcean-Logo.png" alt="" style="width:200px;"/></a>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="navbar navbar-static-top float-right">
+            <div class="navigation">
+              <nav>
+                <ul class="nav topnav">
+                  <li class="dropdown">
+                    <a href="index.html"><i class="icon-home"></i> Home</a>
+                  </li>
+                  <li class="dropdown">
+                    <a routerLink="about"> About Us</a>
+                  </li>
+
+                  <li class="dropdown">
+                    <a>Products <i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li routerLink="products" *ngFor="let brand of brands"><a (click)="clickBrand(brand.brand_name, brand.brand_id)">{{brand.brand_name}}</a></li>
+                    </ul>
+                  </li>
+        <li class="dropdown">
+                    <a> Resources <i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a routerLink="gallery">Knowledge base</a></li>
+                      <li><a routerLink="gallery">Events</a></li>
+                      <li><a routerLink="gallery">Picture Gallery</a></li>
+                      <li><a routerLink="gallery">Images & Videos</a></li>
+                      <li><a routerLink="gallery">Blog</a></li>
+                    </ul>
+                  </li>
+        <li class="dropdown">
+                    <a  routerLink="careers">Careers </a>
+                  </li>
+                  <li class="dropdown">
+                    <a  routerLink="contact">Contact </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- end navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

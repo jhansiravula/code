@@ -1,0 +1,206 @@
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="inner-heading">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Products </li>
+          </ul>
+          <h2>Products</h2>
+          <a href="index.html"><img src="assets/img/long-arrow-left.png"  style="padding-top:15px;"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="inner-heading">
+          <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
+                        <li><a href="#">Brand Name</a> <i class="icon-angle-right"></i></li>
+                        <li><a href="#">Categories</a> <i class="icon-angle-right"></i></li>
+                        <li class="active"><a href="#">Sub Categories</a></li>
+                    </ul>
+          <h2>Products</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section id="content" class="secpd1 products">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <aside class="left-sidebar" *ngFor="let category of categories">
+                 
+                   <li (click)="getSubcategory(category.categories_id, category.brand_id)">{{category.categories_name}}</li>
+        
+                </aside>
+              </div>
+            <div class="col-sm-9">
+                <section id="projects">
+                    <div class="row">
+                        <div class="col-sm-6" *ngFor="let product of products">
+                            <div class="item">
+                                <div class="pimg">
+                                    <a><img (click)="clickProduct(product.product_id,product.sub_categories_id ,product.categories_id,product.brand_id)" src="http://localhost:8081/{{product.product_image}}"
+                                            alt="" /></a>
+                                </div>
+                                <div class="col-sm-6" *ngFor="let subCategory  of subCategories">
+                                    <div class="item">
+                                        <div class="pimg">
+                                            <a><img (click)="clickProduct(product.product_id,product.sub_categories_id ,product.categories_id,product.brand_id)" src="http://localhost:8081/{{subCategory.images}}"
+                                                    alt="" /></a>
+                                        </div>
+                                <div class="fig-title">
+                                    <h4>Brand Model</h4>
+                                    <h2><a>{{product.product_name}}</a></h2>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<section id="content" class="secpd1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <aside class="left-sidebar">
+
+          <!-- <h5 style="font-weight: 18px;">
+            <li (click)="getSubcategory(category.categories_id, category.brand_id)">{{category.categories_name}}</li>
+          </h5> -->
+          <div class="widget" *ngFor="let brand of brands">
+            <img src="http://localhost:8081/{{brand.images}}" />
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading">Categories</h5>
+            <ul class="cat">
+              <li *ngFor="let category of categories; let i = index;" id="category-{{category.categories_id}}"
+                (click)="getSubcategory(category.categories_id, category.brand_id, category.categories_name, i)"><i class="icon-angle-right"></i>
+                &nbsp; {{category.categories_name}}</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="col-sm-9">
+        <section id="projects">
+
+          <!-- Item Project and Filter Name -->
+
+          <h4  class="category-title">{{selectedCategoryName}}</h4>
+            <ul id="thumbs" class="grid cs-style-4 portfolio"  *ngIf="(categories.length > 0 && subCategories.length > 0 && !showProducts) ; else products_List">
+              <li class="span3" *ngFor="let each of subCategories">
+                <div class="item">
+                  <figure>
+                    <div><img src="http://localhost:8081/{{each.images}}" alt="" /></div>
+                    <figcaption (click)="clickSubCategory(each.sub_categories_id, each.categories_id, each.brand_id)">
+                      <div>
+                        <span>
+                          <a title={{each.sub_categories_details}}>
+                            <i (click)="clickSubCategory(each.sub_categories_id, each.categories_id, each.brand_id)"
+                              class="icon-arrow-right icon-circled icon-bglight icon-2x"></i></a>
+                        </span>
+                      </div>
+                    </figcaption>
+                  </figure>
+                  <div class="fig-title">
+                    <h2><a (click)="clickSubCategory(each.sub_categories_id, each.categories_id, each.brand_id)" title="{{each.sub_categories_details}}">{{each.sub_categories_details}}</a></h2>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          <!-- End Item Project -->
+
+
+          <ng-template #products_List>
+            <!-- Item Project and Filter Name -->
+            <ul id="thumbs" class="grid cs-style-4 portfolio">
+              <li class="col-sm-4" *ngFor="let product of products">
+                <div class="item">
+                  <figure>
+                    <div><img src="http://localhost:8081/{{product.product_image}}" alt="" /></div>
+                    <figcaption  (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)">
+                      <div>
+                        <span>
+                          <a title={{product.product_name}}>
+                            <i (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)"
+                              class="icon-arrow-right icon-circled icon-bglight icon-2x"></i></a>
+                        </span>
+                      </div>
+                    </figcaption>
+                  </figure>
+                  <div class="fig-title">
+                    <h2><a (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)" title="{{product.product_name}}">{{product.product_name}}</a></h2>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ng-template>
+
+
+
+          <ng-template *ngIf='showProducts'>
+            <ul id="thumbs" class="grid cs-style-4 portfolio">
+              <li class="col-sm-4" *ngFor="let product of products">
+                <div class="item">
+                  <figure>
+                    <div><img src="http://localhost:8081/{{product.product_image}}" alt="" /></div>
+                    <figcaption  (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)">
+                      <div>
+                        <span>
+                          <a title={{product.product_name}}>
+                            <i (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)"
+                              class="icon-arrow-right icon-circled icon-bglight icon-2x"></i></a>
+                        </span>
+                      </div>
+                    </figcaption>
+                  </figure>
+                  <div class="fig-title">
+                    <h2><a (click)="clickProduct(product.product_id, product.sub_categories_id ,product.categories_id,product.brand_id)" title="{{product.product_name}}">{{product.product_name}}</a></h2>
+                    <!-- <div id="product_desc">{{getDesc(product.product_description)}}</div> -->
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </ng-template>
+
+        </section>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--------------------Products list---------------->
+
+
+<!-- <section id="content" class="secpd1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <section id="projects">
+            <ul id="thumbs" class="grid cs-style-4 portfolio">
+  
+              
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section> -->

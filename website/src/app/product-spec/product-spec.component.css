@@ -1,0 +1,13 @@
+.product-details .item .fig-title {
+    padding: 5px 20px 20px 20px;
+    height: 100%;
+    display: grid;
+}
+#product_desc p img{
+    width: 100% !important;
+    height: auto !important;
+}
+.product-details .item .fig-title img{
+    width: 100% !important;
+    height: auto !important;
+}

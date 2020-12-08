@@ -1,0 +1,207 @@
+.text-center{
+	text-align: center;
+}
+.secpd1 {
+    padding: 60px 0;
+}
+.services-style1-area {
+    position: relative;
+    display: block;
+    background: url('../img/counter_background.jpg') center center/cover;
+    z-index: 1;
+}
+.services-style1-area:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url(../images/pattern/pattern-bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transition: .5s ease;
+}
+.sec-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 65px;
+}
+.sec-title.centered {
+    text-align: center !important;
+}
+.sec-title .title {
+    position: relative;
+    font-size: 18px;
+    color: #2200bd;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+.sec-title .separator {
+    position: relative;
+    width: 40px;
+    margin-top: 16px !important;
+}
+.sec-title.centered .separator {
+    margin: 0 auto !important;
+    float: none !important;
+}
+.sec-title .separator:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 0px;
+    width: 10px;
+    height: 2px;
+    background-color: #ff9600;
+}
+.sec-title .separator span {
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    width: 10px;
+    height: 5px;
+    margin-left: -5px;
+    display: inline-block;
+    background-color: #2200bd;
+}
+.sec-title .separator:after {
+    position: absolute;
+    content: '';
+    right: 0px;
+    top: 0px;
+    width: 10px;
+    height: 2px;
+    background-color: #ff9600;
+}
+.sec-title h2 {
+    position: relative;
+    color: #222222;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2em;
+    margin-top: 22px;
+}
+.single-service-style1 {
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+    transition: all 300ms ease;
+    transform: perspective(1200px) rotateX(0deg) translateY(0px);
+}
+.single-service-style1 .inner {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+    padding-bottom: 0;
+}
+.single-service-style1 .img-holder {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    z-index: 1;
+}
+.single-service-style1 .img-holder::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgba(255, 102, 44, 0.70);
+    content: "";
+    transition: all 0.5s ease-in-out 0s;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateX(-90deg) translateZ(0px);
+}
+.single-service-style1 .img-holder img {
+    width: 100%;
+    transition: .5s ease;
+}
+.single-service-style1 .text-holder {
+    position: relative;
+    display: block;
+    background: #ffffff;
+    padding: 20px 20px 23px;
+    z-index: 3;
+    border-radius: 0 0px 10px 10px;
+}
+.single-service-style1 .text-holder .button {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+}
+.single-service-style1 .text-holder .button a {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border: 10px solid rgba(255, 255, 255, 0.60);
+    border-radius: 50%;
+    transition: all 500ms ease;
+}
+.single-service-style1 .text-holder .button a i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1fc6c7;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 60px;
+    border-radius: 50%;
+    transition: all 500ms ease;
+}
+.single-service-style1 .text-holder h4 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 20px 0 0;
+}
+.single-service-style1 .text-holder h4 a {
+    color: #1a1e32;
+    transition: all 500ms ease;
+    transition-delay: .4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+.features {
+    width: 100%;
+    background: #FFFFFF;
+}
+.features_row {
+    margin-top: 55px;
+}
+.feature {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #FFFFFF;
+}
+.feature_icon {
+    height: 55px;
+}
+.feature_icon img {
+    max-width: 100%;
+}
+.feature_title {
+    position: relative;
+    font-size: 20px;
+    margin-top: 23px;
+}

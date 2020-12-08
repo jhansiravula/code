@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+		  <div class="card-header">
+			 <div>
+				<h2>User Details</h2>	
+			 </div>
+		   </div>
+		   <div class="card-body text-center">
+			<table border="1">
+				<tr>
+          			<th>Person ID</th>
+          			<th>Person Name</th>
+					<th>Email</th>
+					<th>Mobile No</th>
+					<th>Message</th>
+					<th>Action</th>					
+          		</tr>
+				<tr *ngFor="let person of contacts">
+					<td>{{person.person_id}}</td>
+					<td>{{person.full_name}}</td>
+					<td>{{person.email}}</td>
+					<td>{{person.mobile_no}}</td>
+					<td>{{person.message}}</td>
+					<td><button (click)="delete(person.person_id)" class="btn btn-danger btn-sm" style="cursor: pointer;">Delete</button></td>
+				</tr>
+			</table>
+		   </div>
+		</div>
+	</div>
+</div>

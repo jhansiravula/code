@@ -1,0 +1,47 @@
+<section id="inner-headline">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="inner-heading">
+            <ul class="breadcrumb">
+              <li><a href="index.html">Home</a> </li>
+              <li><a (click)="clickBackWord()" style="cursor: pointer;">Products</a> <i class="icon-arrow-long-left"></i></li> 
+              <li><a >Product Details</a> </li>
+              <!-- <li><a href="#">Sub Categories</a></li> 
+              <li class="active"><a href="#">Products</a></li> -->
+            </ul>
+            <h2>Product Details</h2>
+            <a (click)="clickBackWord()" style="cursor: pointer;"><img src="assets/img/long-arrow-left.png" style="padding-top:15px;"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content" class="secpd1 product-details " >
+    <div class="container">
+      <div class="row"  *ngFor ="let product of products">
+          <div class="col-sm-12" id="BID{{product.brand_id}}">
+          <section id="projects">
+                      <div class="item">
+                      <div class="pimg">
+                          <img src="http://localhost:8081/{{product.product_image}}" alt="" />
+                      </div>
+                      <div class="fig-title">
+                      <!-- <h4>Brand Model</h4> -->
+                      <h2>{{product.product_name}}</h2>
+                      <!-- <p>Brand: Brand Name</p> -->
+                      <div id="product_desc">{{getDesc(product.product_description)}}</div>
+                      <!-- <a href="contact.html" class="btn btn-small btn-info" style="margin-right: 20px;">Enquiry Now</a> -->
+                      <!-- <a href="" class="btn btn-small btn-info" onclick="print_current_page()">Print this product</a>-->
+                    </div>
+                    <div style="clear: both;"></div>
+              </div>
+             
+            </section>
+            <div style="clear: both;"></div>
+          </div>
+       </div>
+    </div>
+  </section>
+

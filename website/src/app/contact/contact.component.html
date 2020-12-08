@@ -1,0 +1,111 @@
+
+<section id="inner-headline">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="inner-heading">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                </ul>
+            <h2>Contact</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Begin page content -->
+	<div class="container">
+		<div class="clearfix M30"></div> 
+		
+		<!-- Section-holder Start  -->
+		<div class="Section-holder">
+
+    <!-- Section 1 Satrt  -->
+			<div class="section">
+				<h2 class="title-5"><img src="assets/img/favicon.png" style="position: relative; margin-right:6px; top:-3px; width:36px; height:36px;">BlueOcean Technologies</h2>
+				<div class="clearfix M10"></div> 
+    <div class="row">
+        <div class="col-md-12 bg-white">
+            <div class="row M0">
+                <div class="col-sm-5 mapBlock">
+                    <br>
+                    <h4>BlueOcean Technologies and Trading</h4>
+                        <!-- Unit 2252,<br/>
+                        DMCC Busienss centre, Level-1, Jewellery & Gemplex-3, <br/>
+                        Dubai, United Arab Emirates.<br><br> -->
+                            Unit No: C15,<br/>
+                            DMCC Business Centre,<br/>
+                            Level No 13, AG Tower,<br/>
+                            Dubai, United Arab Emirates.<br/><br/>
+                    <i class="fa fa-phone"></i>&nbsp; +971 4 5786974<br>&nbsp;<br/>
+                    <i class="fa fa-envelope"></i>&nbsp;  <a href="mailto:info@blueocean-technologies.com">info@blueocean-technologies.com</a>
+                </div>
+                <div class="col-sm-7">
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119034.95272813212!2d55.07146715363952!3d25.069835112307043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5a311cb63c3abf1e!2sJewellery%20%26%20Gemplex%20Building!5e0!3m2!1sen!2sin!4v1572435738491!5m2!1sen!2sin" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38594.1141557663!2d55.12161250496799!3d25.0641021815538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6cadffbc580b%3A0x49808fa136f750f!2sAG%20Tower%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1577785339980!5m2!1sen!2sin" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix MB30"></div>
+        </div>
+
+           
+            <h2 class="title-2 font-U ">Mail us</h2>
+            <form [formGroup]="cngForm">
+                <div class="clearfix M10"></div>
+                <div class="row mailUs">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="row mail-block">
+                            <div class="col-sm-6">
+                                <div class="form-group"> 
+                                    <label>Full Name</label>                                   
+                                    <input type="text" placeholder="Full Name" class="form-control" formControlName="firstName" aria-required="true">
+                                </div>
+                                <div *ngIf="cngForm.controls['firstName'].invalid && (cngForm.controls['firstName'].dirty || cngForm.controls['firstName'].touched)" class="alert alert-danger">
+                                    <div *ngIf="cngForm.controls['eMail'].errors.required">
+                                        Please enter your full name
+                                    </div>
+                                </div>                
+                                <div class="form-group"> 
+                                    <label>Email</label>                                   
+                                    <input type="text" placeholder="Email-id" class="form-control" formControlName="eMail" aria-required="true">                                   
+                                </div>
+                                <div *ngIf="cngForm.controls['eMail'].invalid && (cngForm.controls['eMail'].dirty || cngForm.controls['eMail'].touched)" class="alert alert-danger">
+                                    <div *ngIf="cngForm.controls['eMail'].errors.required">
+                                        Please enter valid email
+                                    </div>
+                                </div>                 
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group"> 
+                                  <label>Mobile no.</label>                                     
+                                 <input type="text" placeholder="Mobile No." class="form-control" formControlName="telephone" aria-required="true">
+                                   
+                                </div>
+                                <div *ngIf="cngForm.controls['telephone'].invalid && (cngForm.controls['telephone'].dirty || cngForm.controls['telephone'].touched)" class="alert alert-danger">
+                                    <div *ngIf="cngForm.controls['telephone'].errors.required">
+                                        Please enter valid mobile number
+                                    </div>
+                                </div>                
+                                <div class="form-group"> 
+                                <label>Comments</label>
+                                <textarea class="form-control" id="txtContent" formControlName="comments" minlength="30" placeholder="Message" rows="1" aria-required="true"></textarea>                              
+                                </div>
+                                
+                                <button type="submit" class="submit" (click)="formDetails()">submit now <i class="fa fa-arrow-circle-right"></i></button>
+                                
+                            </div>
+                        </div><!-- Row End  -->
+                    </div>    
+                </div>
+            </form>
+            </div>            
+ 
+	  
+                <div class="clearfix MB30"></div>
+      
+        
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blue_Ocean</title>
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/images/fav.png">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet">
+    <!-- <script src="../ckeditor.js"></script> -->
+    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
+  <!-- <script>tinymce.init({selector:'textarea'});</script> -->
+
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+  
+
+ <script>
+   var myApp = angular.module('myApp', ['ngSanitize']);
+
+myApp.controller('ctrl', function($scope) {
+    $scope.ProductDescription = "line\nbreaks\npreserved and <div class='alert'>other html works</div>";
+
+});
+
+myApp.filter('linebreaks', function() {
+    return function(text) {
+        return text.replace(/\n/g, "<br>");
+    }
+});
+ </script>
+
+
+</head>
+
+<body>
+
+    <app-root></app-root>
+
+</body>
+
+</html>

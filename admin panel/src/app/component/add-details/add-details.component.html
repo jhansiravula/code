@@ -1,0 +1,63 @@
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body"  ng-controller="ctrl">
+              <form [formGroup]="dngForm" method="post" class="summernote">
+                <h3>Add Product Details</h3>
+                <hr/>
+                <div class="form-group">
+                    <label>Brand Name</label>
+                    <!-- <input type="text" class="form-control" formControlName="BrandId"> -->
+                    <select class="form-control" formControlName="BrandId" (change)='getCatById(add.BrandId.value)'>
+                        <option  *ngFor = 'let brand of brands' [value]="brand.brand_id">{{brand.brand_name}}</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label>Category Name</label>
+                    <!-- <input type="text" class="form-control" formControlName="CategoryId"> -->
+                    <select class="form-control" formControlName="CategoryId" (change)='getSubCatById(add.CategoryId.value,add.BrandId.value)'>
+                        <option  *ngFor = 'let each of categoriesList' [value]="each.categories_id">{{each.categories_name}}</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label>Sub Category Name</label>
+                    <!-- <input type="text" class="form-control" formControlName="SubCategoryId"> -->
+                    <select class="form-control" formControlName="SubCategoryId" (change)='getProductById(add.CategoryId.value,add.BrandId.value)'>
+                        <option *ngFor='let subCat of subCategories' [value]="subCat.sub_categories_id">{{subCat.sub_categories_details}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Product Id</label>
+                    <input type="text" class="form-control" formControlName="ProductId" >
+                </div>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" formControlName="ProductName">
+                </div>
+                <div class="form-group">
+                    <label>Product Image</label> 
+                    <input type="file" class="form-control" name="profile" (change)="onFileSelect($event)" >
+                </div>
+                <div class="form-group" >
+                    <label>Product Description</label>
+                    <!-- <textarea cols="25" rows="3" class="form-control" formControlName="ProductDescription"></textarea> -->
+                        <!-- <editor [init]="{plugins: 'image', outputFormat:'text'}" class="form-control" formControlName="ProductDescription"></editor>   -->
+                        <editor  [init]="{plugins: ['lists link image paste help wordcount table'], 
+                        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
+                        }"  class="form-control" formControlName="ProductDescription"></editor>
+                </div>
+                
+               
+                
+                <div style="clear:both"></div>
+                <hr/>
+                <div class="form-group">
+                    <button (click)='addDetails()' class="btn btn-success btn-sm">Submit</button>
+                    <button (click)="cancel()"  class="btn btn-danger btn-sm">Cancel</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

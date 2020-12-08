@@ -1,0 +1,69 @@
+<!-- <form>
+<div class="control-group span4">
+    <label class="control-label"> Image</label> 
+    <input type="file" name="image" (change)="fileChangeEvent($event)">
+</form> -->
+
+<!--  SINGLE FILE -->
+<!-- <form action="'http://localhost:8081/uploadfile" enctype="multipart/form-data" method="POST" > 
+    <input type="file" name="myFile" />
+    <input type="submit" value="Upload a file"/>
+ </form>
+</div> -->
+
+ 
+<!-- <div>
+    <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">      
+      <div>
+        <input type="file" name="profile" (change)="onFileSelect($event)" />
+      </div>
+      <div>
+        <button type="submit">Upload</button>
+      </div>
+    </form>
+</div> -->
+
+
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<div>
+					<h2>Products   <button class="btn-sm" (click)="openModal()" style="float:right;"> + Add New Product</button> </h2>	
+				</div>	
+			</div>
+			<div class="card-body text-center">
+			  <div class="table-responsive">
+				<table class="table" border="1">
+					<tr>
+					  <th>Product ID</th>
+					  <th>Product Name</th>
+					  <th>Images</th>
+					  <th>Description</th>
+					  <th>Brand Name</th>
+					  <th>Category Name</th>
+                      <th>Sub category Name</th>
+					  <th colspan="2">Actions</th>	
+					</tr>
+					<tr *ngFor="let product of Products">
+						<td>{{product.product_id}}</td>
+						<td>{{product.product_name}}</td>
+						<td>{{product.product_image}}</td>
+						<td >{{product.product_description}}</td>
+						<!-- <td><p ng-bind-html="product_description | linebreaks"></p>		</td> -->
+						<td>{{product.brand_name}}</td>
+						<td>{{product.categories_name}}</td>
+                        <td>{{product.sub_categories_details}}</td>
+						<td><button (click)="openModal(product)" class="btn btn-info btn-sm">Edit</button>
+						<button (click)="delete(product.product_id)" class="btn btn-danger btn-sm">Delete</button></td>
+					</tr>
+				</table>
+			  </div>
+			</div>			
+		</div>
+	</div>
+</div>
+
+
+
+
