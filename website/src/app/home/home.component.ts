@@ -3,6 +3,7 @@ import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { Location } from '@angular/common';
+import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,13 @@ export class HomeComponent implements OnInit {
   brands: any[];
   constructor(private apiService: ProductsService,
     private router: Router,
-    private location: Location,) { }
+    private location: PlatformLocation, ) {
+    /*  location.onPopState((e)=>{
+        console.log(location.href);
+        this.router.navigate(['index.html']);
+      })*/
+     }
+
 
   ngOnInit() {
     this.getBrand();
@@ -32,6 +39,10 @@ export class HomeComponent implements OnInit {
   clickBrand(brandId) {
     this.router.navigate([`/productList/${brandId}`]);
   }
+  back(): void {
+    this.router.navigate(['/index.html'])
+  }
+
 
 
 }
